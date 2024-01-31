@@ -1,0 +1,14 @@
+#main-title {
+    background-color: darkgreen;
+    text-align: center;
+    font-weight: bold;
+}
+body {
+    background-color: darkgreen;
+}
+p {
+    color: black;
+    font-size: 12px;
+}
+
+

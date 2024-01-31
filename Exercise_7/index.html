@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta lang="en">
+        <meta charset="utf-8">
+        <title>Exercise 7</title>
+    </head>
+    <body>
+
+        <input type="text" id="txt-price" placeholder="Enter the price of the item"> <!--This creates an id that acts as a variable for the price box-->
+        <input type="text" id="txt-quantity" placeholder="Enter the quanity of the item"> <!--This creates an id that acts as a variable for the quantity box-->
+        <button id="btn-submit">Calculate</button> <!--This is a button that is labeled "Calculate"-->
+        <div id="output"></div> <!--This is the message the user will recieve once the price calculation is complete-->
+
+        <script>
+        var priceInput = document.getElementById('txt-price'); // The variable priceInput grabs the price from items as the user enters it into the box
+        var quantityInput = document.getElementById('txt-quantity'); // The variable quantityInput grabs the quantity from items as the user enters it into the box
+        var submitBtn = document.getElementById('btn-submit'); // submitBtn grabs the Calculate Button from the item box
+        var output = document.getElementById('output');
+
+        submitBtn.addEventListener('click', function () {
+            var price = priceInput.value; // This takes the input of the price box and stores it under the variable for price
+            var quanity = quantityInput.value; // This takes the input of the quantity box and stores it under quantity variable
+            price = +price; // Take the price and increments it
+            quanity = +quanity; // Takes the quantity and increments it
+            if (Number.isNaN(price) || Number.isNaN(quanity)) { // this function validates if the user has inputted valid numbers, if not, the user will receive an error 
+            output.innerHTML = 'Invalid input';
+            return;
+            }
+            var totalPrice = price * quanity; // This line multiples the price and stores it under the bariable totalPrice
+            totalPrice = Math.round(totalPrice * 100) / 100; // this line is a little redundant. this is used to round the nearest decimal point
+            output.innerHTML = quanity + ' items at $' + price + ' each is $' + totalPrice; // recieves total price message: price x quantity
+        });
+        </script>
+
+
+    </body>
+</html>

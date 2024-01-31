@@ -1,0 +1,11 @@
+body {
+    background-color: gray;
+}
+p {
+    font-weight: bold;
+    border-style: solid;
+    color: brown;
+}
+div {
+    background-color: bisque;
+}
